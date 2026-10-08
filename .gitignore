@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+build/
+dist/
+.pytest_cache/
+
+# Virtual envs
+venv/
+.venv/
+env/
+
+# Trained heads / caches
+*.pt
+cache/
+
+# OS
+.DS_Store

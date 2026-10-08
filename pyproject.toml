@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tokenlift"
+version = "0.1.0"
+description = "Lossless word-level speculative decoding for byte-BPE Indic language models (Tamil, Hindi)."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+  { name = "Rochit L.", email = "rochitl72@gmail.com" },
+  { name = "Adith Sree Jey A S" },
+  { name = "Hari Krishna D" },
+  { name = "Pranavaswaruban S" },
+  { name = "Mithilesh B" },
+]
+keywords = ["speculative-decoding", "tamil", "hindi", "indic-nlp", "byte-bpe", "llm-inference"]
+dependencies = [
+  "torch>=2.2",
+  "transformers>=4.45",
+  "numpy",
+  "scikit-learn",
+]
+
+[project.optional-dependencies]
+data = ["datasets", "huggingface_hub"]
+dev = ["pytest"]
+
+[project.urls]
+Homepage = "https://github.com/rochitl72/tokenlift"
+Paper = "https://github.com/rochitl72/research-paper"
+
+[project.scripts]
+tokenlift = "tokenlift.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["wordhead*", "tokenlift*"]
