@@ -214,14 +214,14 @@ figures and the complete research code live in the
   title  = {TokenLift: Exploiting Latent Word Plans for Exact Word-Level Speculative
             Decoding in Byte-BPE Indic Language Models},
   author = {L., Rochit and Adith Sree Jey, A. S. and Hari Krishna, D. and
-            Pranavaswaruban, S. and Mithilesh, B.},
+            Pranavaswaruban, S. and Santhosh, Muruggu and Mithilesh, B.},
   year   = {2026},
   url    = {https://github.com/rochitl72/tokenlift}
 }
 ```
 
 **Authors:** Rochit L. (lead, corresponding — rochitl72@gmail.com), Adith Sree Jey A S,
-Hari Krishna D, Pranavaswaruban S, Mithilesh B.
+Hari Krishna D, Pranavaswaruban S, Santhosh Muruggu, Mithilesh B.
 
 ## License
 

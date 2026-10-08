@@ -14,6 +14,7 @@ authors = [
   { name = "Adith Sree Jey A S" },
   { name = "Hari Krishna D" },
   { name = "Pranavaswaruban S" },
+  { name = "Santhosh Muruggu", email = "santoshmuruggu@gmail.com" },
   { name = "Mithilesh B" },
 ]
 keywords = ["speculative-decoding", "tamil", "hindi", "indic-nlp", "byte-bpe", "llm-inference"]
