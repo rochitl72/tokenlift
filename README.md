@@ -48,6 +48,21 @@ model would have produced anyway, so:
 
 It runs on a MacBook (Apple MPS), CUDA, or CPU. Training a head takes a few minutes.
 
+### Where it fits (honest positioning)
+
+TokenLift is a **draft-model-free, single-model** accelerator. Its point is *not* to beat ordinary
+speculative decoding — if you already have a smaller model with the **same tokenizer** (e.g. Qwen3-0.6B
+to draft for Qwen3-4B), that standard self-speculation accepts **more** tokens per pass (~3.3 vs ~2.2
+in our tests). What TokenLift gives you instead:
+
+- **No second model.** The head is **~10.7M params (21 MB fp16)** — about **0.27%** of a 4B target —
+  versus loading a full **0.6B draft model (1.19 GB, ~56× bigger)** alongside it.
+- **Works when no same-tokenizer draft model exists** — common for the smallest Indic models.
+- **Trainable on a laptop in minutes**, on the target's own cached features.
+
+Use TokenLift when a draft model is unavailable or memory is tight. If you *can* run a same-tokenizer
+draft model and have the memory, use standard speculative decoding — it's faster per pass.
+
 ## Install
 
 ```bash
@@ -141,6 +156,17 @@ Real lossless greedy decoding, 24 held-out prompts × 64 new tokens, on a MacBoo
 The learned head beats a context-blind dictionary baseline on every model and language. The
 wall-clock payoff is modest at 0.6B and larger at 1.7B–4B (the head's fixed cost is amortized
 against a heavier base forward pass), then **plateaus** — it does not keep growing without bound.
+
+**Versus a full draft model (4B target, same tokenizer).** Standard self-speculation with Qwen3-0.6B
+drafting for Qwen3-4B accepts more per pass, but needs the whole draft model resident:
+
+| Decoder (4B target) | Ta tok/fwd | Hi tok/fwd | extra memory |
+| --- | ---: | ---: | ---: |
+| standard self-spec (0.6B draft) | **3.40** | **3.23** | 1.19 GB |
+| TokenLift head (no draft model) | 2.23 | 1.98 | **21 MB** |
+
+Both are lossless. The trade is explicit: ~1.5× more tokens/forward for the full draft model, at
+**56× the auxiliary memory** and only when a same-tokenizer draft model exists.
 
 <div align="center">
 <img src="assets/A7_tokens_per_forward.png" width="440" alt="Accepted tokens per forward pass by drafter">
