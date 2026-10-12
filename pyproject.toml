@@ -17,6 +17,16 @@ authors = [
   { name = "Santhosh Muruggu", email = "santoshmuruggu@gmail.com" },
   { name = "Mithilesh B" },
 ]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
 keywords = ["speculative-decoding", "tamil", "hindi", "indic-nlp", "byte-bpe", "llm-inference"]
 dependencies = [
   "torch>=2.2",
@@ -31,7 +41,9 @@ dev = ["pytest"]
 
 [project.urls]
 Homepage = "https://github.com/rochitl72/tokenlift"
-Paper = "https://github.com/rochitl72/research-paper"
+Paper = "https://github.com/rochitl72/tokenlift-paper"
+Issues = "https://github.com/rochitl72/tokenlift/issues"
+Changelog = "https://github.com/rochitl72/tokenlift/blob/main/CHANGELOG.md"
 
 [project.scripts]
 tokenlift = "tokenlift.cli:main"

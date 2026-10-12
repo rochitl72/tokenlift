@@ -1,0 +1,19 @@
+{
+  "title": "TokenLift: lossless word-level speculative decoding for byte-BPE Indic language models (v0.1.0)",
+  "upload_type": "software",
+  "description": "TokenLift is an open-source research tool that drafts whole words for byte-level-BPE language models and verifies them with the target model's own argmax, so greedy output is identical to plain decoding. Evaluated on Tamil and Hindi with Qwen3 models. It needs no separate draft model: the trained head is about 21 MB, compared with 1.19 GB for a standard same-tokenizer draft model.",
+  "creators": [
+    {"name": "L., Rochit", "affiliation": "Independent Researcher"},
+    {"name": "Adith Sree Jey, A. S.", "affiliation": "University of Leeds"},
+    {"name": "Hari Krishna, D."},
+    {"name": "Pranavaswaruban, S."},
+    {"name": "Muruggu, Santhosh"},
+    {"name": "Mithilesh, B."}
+  ],
+  "license": "MIT",
+  "keywords": ["speculative decoding", "Tamil", "Hindi", "Indic NLP", "byte-level BPE", "LLM inference"],
+  "access_right": "open",
+  "related_identifiers": [
+    {"identifier": "https://github.com/rochitl72/tokenlift-paper", "relation": "isSupplementTo", "scheme": "url"}
+  ]
+}

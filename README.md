@@ -233,14 +233,14 @@ that tokenization fragments**, and the first to target Indic generation specific
 
 This tool is the companion to a research paper (mechanistic analysis + decoder). Full write-up,
 figures and the complete research code live in the
-**[research-paper repository](https://github.com/rochitl72/research-paper)**.
+**[tokenlift-paper repository](https://github.com/rochitl72/tokenlift-paper)**.
 
 ```bibtex
 @misc{tokenlift2026,
   title  = {TokenLift: Exploiting Latent Word Plans for Exact Word-Level Speculative
             Decoding in Byte-BPE Indic Language Models},
   author = {L., Rochit and Adith Sree Jey, A. S. and Hari Krishna, D. and
-            Pranavaswaruban, S. and Santhosh, Muruggu and Mithilesh, B.},
+            Pranavaswaruban, S. and Muruggu, Santhosh and Mithilesh, B.},
   year   = {2026},
   url    = {https://github.com/rochitl72/tokenlift}
 }
